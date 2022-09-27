@@ -133,12 +133,15 @@ p {
 .header-contacts-item:hover {
   color: var(--accent-color);
 }
+
+
+
 .header-mail-icon,
-.header-phone-icon {
-    fill: currentColor;
+.header-phone-icon {fill: currentColor;
     margin-right: 10px;
     line-height: 14px;}
-.header-phone-icon:hover {color: var(--accent-color);}
+.header-phone-icon:hover
+.header-phone-icon:focus {color: var(--accent-color);}
 
 
 /* -------------------HERO------------------------- */
@@ -147,7 +150,8 @@ p {
 .hero {
   padding: 200px 0;
     max-width: 1600px;
-    margin: auto;
+    height: 600px;
+    margin: 0 auto;
     text-align: center;
   
     background: var(--secondary-bg-color);
@@ -159,6 +163,7 @@ p {
     /* background: ; */
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero-title {
@@ -255,7 +260,7 @@ p {
 }
 
 .team {
-  color: var(--team-bg-color);
+  color: var(--buttons-bg-color);
 }
 .our-team {
   margin-bottom: 50px;
@@ -279,13 +284,13 @@ p {
 }
 
 .our-team-element-text-container {
-  padding: 30px 32px;
+  padding: 30px 0;
 }
 .our-team-contact-image {
   fill: currentColor;
 }
 .our-team-section {
-  background-color: var(--team-bg-color);
+  background-color: var(--buttons-bg-color);
 }
 
 .team-member {
@@ -300,7 +305,6 @@ p {
   font-size: 16px;
   line-height: 1.188;
   text-align: center;
-  padding-bottom: 30px;
   color: var(--secondary-text-color);
 }
 .our-team-contact-item {
@@ -314,17 +318,13 @@ p {
   align-items: center;
   width: 100%;
   height: 100%;
-  color: var(--white-title-color);
+  color: var(--border-color-grey);
   border-radius: 50%;
 }
 
 .our-team-contact-link:hover {color: var(--white-title-color);
   background-color: var(--accent-color);
   
-}
-
-.our-team-contact-image {
-  fill: currentColor;
 }
 
 .our-clients-section {
@@ -344,8 +344,8 @@ p {
 }
 
 .our-client-link {
-  width: 170px;
-  height: 92px;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -355,7 +355,6 @@ p {
 }
 
 .our-client-image {
-  display: block;
   fill: currentColor;
 }
 .our-client-link:hover {
@@ -384,6 +383,9 @@ p {
   color: var(--white-title-color);
   background: var(--accent-color);
   border: none;
+  cursor: pointer;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .filter-button {
   padding: 6px 25px;
@@ -391,23 +393,33 @@ p {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.625;
-
+  letter-spacing: 0.03em;
   border-radius: 4px;
 
   color: var(--primary-text-color);
   background-color: var(--buttons-bg-color);
   border: none;
-}
-.filter-button-selected:hover {
   cursor: pointer;
 }
-.filter-button:hover {
+
+.filter-button:hover, 
+.filter-button:focus {
   color: var(--white-title-color);
   background-color: var(--accent-color);
   cursor: pointer;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
       0px 2px 2px rgba(0, 0, 0, 0.12);
 }
+
+.filter-button-selected:hover
+.filter-button-selected:focus  {
+  color: var(--white-title-color);
+  background-color: var(--accent-color);
+  cursor: pointer;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
 
 .portfolio-section {
   margin: auto;
@@ -433,7 +445,8 @@ p {
   text-decoration: none;
 }
 
-.portfolio-link:hover {
+.portfolio-link:hover,
+.portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -485,12 +498,11 @@ p {
   height: 21px;
   font-style: normal;
   line-height: 1.5;
+  text-decoration: none;
   color: var(--white-title-color);
 }
 .footer-contact-list {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
+  display: block;
 }
 
 .contacts-address:hover,
@@ -500,6 +512,7 @@ p {
 }
 .footer-contacts-item {
   display: block;
+  margin: 9px 0;
   line-height: 1.5;
   letter-spacing: 0.02em;
   text-decoration: none;
@@ -528,6 +541,7 @@ p {
   display: flex;
   gap: 10px;
   margin-top: 16px;
+  justify-content: center;
 }
 
 .our-team-contact-item-footer {
